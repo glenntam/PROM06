@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <h1>Chatbot creator</h1>
+    <div>
+      <div id="conversationContainer"></div>
+      <div id="uiContainer">
+        <textarea id="textBox" name="textBox" placeholder="Start here..." maxlength="2800"></textarea>
+        <input id="submitBtn" class="btn" type="button" value="Submit" onclick="getBotResponse()" />
+      </div>
+      <div>
+        <input id="createBtn" class="btn" type="submit" value="Enter some training data then click the green button." onclick="createNewChatbot()" disabled>
+      </div>
+      <!-- Feedback survey -->
+      <div id="feedback" class="feedback">
+        <div class="feedbackForm">
+          <h2><font color="red">PLEASE</font> complete this Feedback Survey. It takes <font color="red">less than a minute</font>.</h2>
+          <form action="/bot" method="POST">
+            <b>1. I think that I would like to use this system frequently.</b><br>
+            <label class="radioSelect"><input type="radio" name="q1" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q1" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q1" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q1" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q1" value="5">Strongly Agree</label>
+            <br>
+            <b>2. I found the system unnecessarily complex.</b><br>
+            <label class="radioSelect"><input type="radio" name="q2" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q2" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q2" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q2" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q2" value="5">Strongly Agree</label>
+            <br>
+            <b>3. I thought the system was easy to use.</b><br>
+            <label class="radioSelect"><input type="radio" name="q3" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q3" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q3" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q3" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q3" value="5">Strongly Agree</label>
+            <br>
+            <b>4. I think that I would need the support of a technical person to be able to use this system.</b><br>
+            <label class="radioSelect"><input type="radio" name="q4" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q4" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q4" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q4" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q4" value="5">Strongly Agree</label>
+            <br>
+            <b>5. I found the various functions in this system were well integrated.</b><br>
+            <label class="radioSelect"><input type="radio" name="q5" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q5" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q5" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q5" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q5" value="5">Strongly Agree</label>
+            <br>
+            <b>6. I thought there was too much inconsistency in this system.</b><br>
+            <label class="radioSelect"><input type="radio" name="q6" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q6" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q6" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q6" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q6" value="5">Strongly Agree</label>
+            <br>
+            <b>7. I would imagine that most people would learn to use this system very quickly.</b><br>
+            <label class="radioSelect"><input type="radio" name="q7" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q7" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q7" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q7" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q7" value="5">Strongly Agree</label>
+            <br>
+            <b>8. I found the system very cumbersome to use.</b><br>
+            <label class="radioSelect"><input type="radio" name="q8" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q8" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q8" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q8" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q8" value="5">Strongly Agree</label>
+            <br>
+            <b>9. I felt very confident using the system.</b><br>
+            <label class="radioSelect"><input type="radio" name="q9" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q9" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q9" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q9" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q9" value="5">Strongly Agree</label>
+            <br>
+            <b>10. I needed to learn a lot of things before I could get going with this system.</b><br>
+            <label class="radioSelect"><input type="radio" name="q10" required value="1">Strongly Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q10" value="2">Disagree</label>
+            <label class="radioSelect"><input type="radio" name="q10" value="3">Neutral</label>
+            <label class="radioSelect"><input type="radio" name="q10" value="4">Agree</label>
+            <label class="radioSelect"><input type="radio" name="q10" value="5">Strongly Agree</label>
+            <br><textarea id="feedbackBox" name="feedbackBox" placeholder="Any extra feedback is welcome!" maxlength="2800" rows="6" cols="100"></textarea>
+            <br><br>
+            <input id="formBtn" type="submit">
+          </form>
+        </div>
+      <script src="{{ url_for('static', filename= 'prom06.js') }}"></script>
+    </div>
+  </body>
+</html>
+

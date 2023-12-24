@@ -1,0 +1,160 @@
+body {
+	font-family: Sans-Serif;
+	background-color: #171612;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 95%;
+}
+h1 {
+	text-align: center;
+	color: white;
+}
+h2 {
+	text-align: center;
+	color: black;
+	padding-top: 1px;
+	padding-bottom: 2px;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+tr {
+	border-bottom: 1pt solid black;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#conversationContainer {
+	margin-top: 25px;
+}
+#uiContainer {
+	display: flex;
+	align-items: top;
+	margin-top: 50px;
+	height: 170px;
+}
+#textBox {
+	width: 80%;
+	color: black;
+	height: 150px;
+	padding: 15px 15px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	margin-right: 20px;
+	background-color: #f8f8f8;
+	resize: none;
+}
+.btn {
+	font-size: 1em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 15px;
+	padding: 15px 32px;
+}
+#submitBtn {
+	background-color: green;
+	color: white;
+	height: 150px;
+}
+#submitBtn:disabled,
+#submitBtn[disabled]{
+	border: 1px solid #999999;
+	background-color: #bbbbbb;
+	color: #666666;
+}
+#createBtn {
+	background-color: red;
+	color: white;
+	width: 95%;
+	white-space: normal;
+	word-wrap: break-word;
+}
+#createBtn:disabled,
+#createBrn[disabled]{
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+}
+#formBtn {
+	font-size: 1.7em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 15px;
+	padding: 10px 30px;
+	background-color: green;
+	color: white;
+	height: 70px;
+}
+.userText {
+	color: white;
+	font-family: monospace;
+	font-size: 15px;
+	text-align: right;
+	line-height: 30px;
+}
+.userText span {
+	background-color: #009688;
+	padding: 10px;
+	border-radius: 2px;
+}
+.firstBot {
+	color: white;
+	font-family: monospace;
+	font-size: 15px;
+	text-align: left;
+	line-height: 30px;
+}
+.firstBot span {
+	background-color: #EF5350;
+	padding: 10px;
+	border-radius: 2px;
+}
+.secondBot {
+	color: white;
+	font-family: monospace;
+	font-size: 15px;
+	text-align: left;
+	line-height: 30px;
+}
+.secondBot span {
+	background-color: blue;
+	padding: 10px;
+	border-radius: 2px;
+}
+.feedback {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+.feedbackForm {
+	color: black;
+	background-color: #fefefe;
+	margin: 5% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+label {
+	font-size: 0.7em;
+	  margin: 0 0.2em;
+	display:inline-block;
+}

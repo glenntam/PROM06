@@ -8,3 +8,6 @@ flask_session/
 
 # Python environment directory
 env/
+
+# database
+prom06.db

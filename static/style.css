@@ -131,7 +131,7 @@ td {
 	padding: 10px;
 	border-radius: 2px;
 }
-.feedback {
+.modal {
 	display: none;
 	position: fixed;
 	z-index: 1;

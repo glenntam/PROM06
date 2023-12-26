@@ -9,18 +9,32 @@
     <title>Chatbot</title>
   </head>
   <body>
-    <h1>Chatbot creator</h1>
-    <div>
-      <div id="conversationContainer"></div>
-      <div id="uiContainer">
-        <textarea id="textBox" name="textBox" placeholder="Start here..." maxlength="2800"></textarea>
-        <input id="submitBtn" class="btn" type="button" value="Submit" onclick="getBotResponse()" />
+    <!-- Consent form popup -->
+    <div id="consent" class="modala" style="display:none;">
+      <div class="feedbackFormx">
+        <h1>PROM06</h1>
+        <p>This is a University of Sunderland research project on using one chatbot to create another chatbot.</p>
+        <p>This is an anonymous study. No identifiable information is stored. Details are <a href="https://docs.google.com/document/d/1BH3eHY3PumeN4nPgzKRXf4iw7Omd7AMw0ZUlNqM3cCU/edit?usp=sharing">here</a>.
+        </p>
+        <p>You must be over 18 years to continue.</p>
+        <button onclick="begin()">I Agree</button>
       </div>
+    </div>
+    <!-- Main page-->
+    <div id="main"i style="display:none;">
+      <h1>Chatbot creator</h1>
       <div>
-        <input id="createBtn" class="btn" type="submit" value="Enter some training data then click the green button." onclick="createNewChatbot()" disabled>
+        <div id="conversationContainer"></div>
+        <div id="uiContainer">
+          <textarea id="textBox" name="textBox" placeholder="Start here..." maxlength="2800"></textarea>
+          <input id="submitBtn" class="btn" type="button" value="Submit" onclick="getBotResponse()" />
+        </div>
+        <div>
+          <input id="createBtn" class="btn" type="submit" value="Enter some training data then click the green button." onclick="createNewChatbot()" disabled>
+        </div>
       </div>
       <!-- Feedback survey -->
-      <div id="feedback" class="feedback">
+      <div id="feedback" class="modal">
         <div class="feedbackForm">
           <h2><font color="red">PLEASE</font> complete this Feedback Survey. It takes <font color="red">less than a minute</font>.</h2>
           <form action="/bot" method="POST">
@@ -98,8 +112,9 @@
             <input id="formBtn" type="submit">
           </form>
         </div>
-      <script src="{{ url_for('static', filename= 'prom06.js') }}"></script>
+      </div>
     </div>
+    <script src="{{ url_for('static', filename= 'prom06.js') }}"></script>
   </body>
 </html>
 

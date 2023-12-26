@@ -39,9 +39,8 @@ function userInput(phrase) {
 
 
 // Output instructions
-botOutput("Hi, I can help you create a new chatbot if you give me some training information.");
-botOutput("Type in some things you want your new AI to know (you can also copy and paste a whole body of text).");
-botOutput("After you are finished, you can click the red button, below.");
+botOutput("Hi, I can help you create a new chatbot if you give me some training data.");
+botOutput("Type in some information you want your new AI to know (you can also copy and paste a whole body of text).");
 
 
 /**
@@ -111,4 +110,17 @@ function createNewChatbot() {
   botOutput("One moment please. Creating your new AI chatbot now...");
   state = 2;
   getBotResponse();
+}
+
+
+/**
+* Show consent form on page load and get consent to begin
+*/
+$(document).ready(function(){
+  $("#consent").fadeIn("slow");
+});
+function begin() {
+  $("#consent").fadeOut("slow", function() {
+  $("#main").fadeIn("slow");
+ });
 }

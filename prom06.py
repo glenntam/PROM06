@@ -58,6 +58,7 @@ def get_bot_response():
                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", sane_data)
         conn.commit()
         conn.close ()
+        print(sane_data)
         session.clear()
         return redirect('thankyou')
 
@@ -137,4 +138,4 @@ if __name__ == "__main__":
     """Start web app."""
     if sys.version_info[0:2] != (3, 11):
         raise Exception('This software requires Python 3.10')
-    app.run(debug=True)
+    app.run(debug=False)

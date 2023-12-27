@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <title>Chatbot</title>
   </head>
   <body>
-    <!-- Consent form popup -->
-    <div id="consent" class="modala" style="display:none;">
+    <!-- Consent popup -->
+    <div id="consent" style="display:none;">
       <div class="feedbackFormx">
         <h1>PROM06</h1>
         <p>This is a University of Sunderland research project using one chatbot to create another chatbot.</p>
-        <p>This is an anonymous study. No identifiable information is stored. Details are <a href="https://docs.google.com/document/d/1BH3eHY3PumeN4nPgzKRXf4iw7Omd7AMw0ZUlNqM3cCU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>.
+        <p>This is an anonymous study. No identifiable information is stored. You may audit the code on github: <a href="https://github.com/glenntam/prom06/">https://github.com/glenntam/prom06/</a> and see the University of Sunderland Research Ethics Group PIS/CF <a href="https://prom06.glenntam.com/static/PROM06-glenntam-PISandCF.pdf" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
         <p>You must be over 18 years to continue.</p>
         <button onclick="begin()">I Agree</button>
       </div>
     </div>
     <!-- Main page-->
-    <div id="main"i style="display:none;">
+    <div id="main" style="display:none;">
       <h1>Chatbot creator</h1>
       <div>
         <div id="conversationContainer"></div>

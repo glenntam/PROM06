@@ -10,4 +10,4 @@ flask_session/
 env/
 
 # database
-prom06.db
+/prom06.db

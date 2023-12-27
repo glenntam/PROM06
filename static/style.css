@@ -1,3 +1,15 @@
+:root {
+  color-scheme: dark;
+    --bg: #212121;
+    --accent-bg: #2b2b2b;
+    --text: #dcdcdc;
+    --text-light: #ababab;
+    --accent: #ffb300;
+    --accent-text: var(--bg);
+    --code: #f06292;
+    --preformatted: #ccc;
+    --disabled: #111;
+}
 body {
 	font-family: Sans-Serif;
 	background-color: #171612;
@@ -16,20 +28,6 @@ h2 {
 	color: black;
 	padding-top: 1px;
 	padding-bottom: 2px;
-}
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-tr {
-	border-bottom: 1pt solid black;
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-td {
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 #conversationContainer {
 	margin-top: 25px;
@@ -158,3 +156,4 @@ label {
 	  margin: 0 0.2em;
 	display:inline-block;
 }
+

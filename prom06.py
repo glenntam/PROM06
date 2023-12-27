@@ -41,6 +41,10 @@ def get_bot_response():
         else:
             pass
     if request.method == 'POST':  # user submits feedback survey
+        try:
+            corpus = str(session['corpus'])
+        except:
+            corpus = ""
         sane_data = (int(request.form.get('q1')),
                      int(request.form.get('q2')),
                      int(request.form.get('q3')),

@@ -10,6 +10,7 @@ CREATE TABLE "survey" (
 	"q8"	INTEGER NOT NULL,
 	"q9"	INTEGER NOT NULL,
 	"q10"	INTEGER NOT NULL,
+	"nps"   INTEGER NOT NULL,
 	"feedback"	TEXT,
 	"corpus"	TEXT,
 	PRIMARY KEY("id" AUTOINCREMENT)

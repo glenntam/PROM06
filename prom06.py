@@ -55,11 +55,12 @@ def get_bot_response():
                      int(request.form.get('q8')),
                      int(request.form.get('q9')),
                      int(request.form.get('q10')),
+                     int(request.form.get('nps')),
                      str(request.form.get('feedbackBox')),
                      str(session['corpus']))
         conn = get_db_connection()
-        conn.cursor().execute("INSERT INTO survey(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, feedback, corpus) \
-                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", sane_data)
+        conn.cursor().execute("INSERT INTO survey(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, nps, feedback, corpus) \
+                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", sane_data)
         conn.commit()
         conn.close ()
         print(sane_data)
